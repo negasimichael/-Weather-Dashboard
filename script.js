@@ -41,12 +41,11 @@ $("#search-button").on("click", function () {
       console.log (city.list[0].dt_txt)
       console.log  (city[0].weather.icon)
       console.log  (city.main.temp)
-      // let tempF = result.main.temp-273.15*1.80+32;
+      let tempF = result.main.temp-273.15*1.80+32;
       console.log  (result.main.humidity)
       console.log(Math.floor(tempF))
 
    
-      // currentConditions(result);
       makeList(city);
       $('#curentCity').empty();
 
