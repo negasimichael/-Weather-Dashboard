@@ -35,14 +35,15 @@ $("#search-button").on("click", function (e) {
 
    }).then(function (result) {
       console.log(result)
-      var city = (result.city.name)
-      var country = (city + ', ' + country)
-      var cityDate = (result.list[0].dt_txt)
-      var image = (result.weather[0].icon)
-      var tempF = (result.main.temp)
+      console.log(result.list[0].main.temp)
+      console.log (result.list[0].wind.speed)
+      // console.log  (city + ', ' + country)
+      console.log (result.list[0].dt_txt)
+      console.log  (result.list.weather[0].icon)
+      console.log  (result.list.main.temp)
       // let tempF = result.main.temp-273.15*1.80+32;
-      var humidity = (result.main.humidity)
-      var wind = (result.main.wind)
+      console.log  (result.main.humidity)
+      console.log  (result.main.wind)
       console.log(Math.floor(tempF))
 
       // currentConditions(result);
