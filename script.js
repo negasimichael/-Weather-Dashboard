@@ -5,15 +5,15 @@ let date = new Date();
 $("#search-value").on("click", function (e) {
    var city = $('#search-value').val();
    e.preventDefault();
-   console.log(city)
+   console.log()
 
-})
+});
 
-$("#search-button").on("click", function (e) {
-   e.preventDefault();
-   // $('forcecastH5').addClass('show');
+$("#search-button").on("click", function () {
+
+    $('forcecastH5').addClass('show');
    //store the value
-   var city = $("#search-value").val();
+    city = $("#search-value").val();
 
    $("#serch-value").on("click", "li", function () {
       currentWeather($(this).text());
@@ -35,21 +35,20 @@ $("#search-button").on("click", function (e) {
 
    }).then(function (result) {
       console.log(result)
-      console.log(result.list[0].main.temp)
-      console.log (result.list[0].wind.speed)
-      // console.log  (city + ', ' + country)
-      console.log (result.list[0].dt_txt)
-      console.log  (result.list.weather[0].icon)
-      console.log  (result.list.main.temp)
+      console.log(city.main)
+      console.log(result .city.main.temp)
+      console.log ( rcity.list[0].wind.speed)
+      console.log (city.list[0].dt_txt)
+      console.log  (city[0].weather.icon)
+      console.log  (city.main.temp)
       // let tempF = result.main.temp-273.15*1.80+32;
       console.log  (result.main.humidity)
-      console.log  (result.main.wind)
       console.log(Math.floor(tempF))
 
+   
       // currentConditions(result);
-      // currentConditions(result);
-      makeList(country);
-      $('#curentWeather').empty();
+      makeList(city);
+      $('#curentCity').empty();
 
       var card = $("<div>").addClass("card");
       var cardBody = $("<div>").addClass("card-body");
@@ -57,13 +56,13 @@ $("#search-button").on("click", function (e) {
       var cityDate = $("<h4>").addClass("card-title").text(result.list[0].dt_txt.toLocaleDateString('en-US'));
       var tempF = $("<p>").addClass("card-text current-temp").text("Temperature: " + tempF + " °F");
       var humidity = $("<p>").addClass("card-text current-humidity").text("Humidity: " + result.main.humidity + "%");
-      var wind = $("<p>").addClass("card-text current-wind").text("Wind Speed: " + result.wind.speed + " MPH");
-      var image = $("<img>").attr("src", "https://openweathermap.org/img/w/" + result.weather[0].icon + ".png")
+      var wind = $("<p>").addClass("card-text current-wind").text("Wind Speed: " + result.list[0].wind.speed + " MPH");
+      var image = $("<img>").attr("src", "https://openweathermap.org/img/w/" + result.list[0].weather.icon + ".png")
 
       city.append(cityDate, image)
       cardBody.append(city, tempF, humidity, wind);
       card.append(cardBody);
-      $("#currentWeather").append(card)
+      $("#currenCity").append(card)
 
    })
 
@@ -99,29 +98,15 @@ $.ajax({
    city.append(cityDate, image)
    cardBody.append(city, tempF, humidity, wind);
    card.append(cardBody);
-   $("#currentWeather").append(card)
+   $("#forcast").append(card)
 
 })
 }
-      // result.list.forEach(data => {
-      //    console.log(data.main.humidity)
-      // })
-
-      // function makeList() {
-      //    var  makeList = $("<li>").addClass(list-group-item).text(text)
-      //    $(".list").appen(listItem)
-      // }
-
-      // const list = $('ul')
-      // for (let i = 0; i < result.list.length; i+= 5) {
-      //    console.log(result.list[i])
-      //    const humidity = $('li')
-      //    humidity.text(result.list[i].humidity)
 
 
-   //       list.append(humidity)
-   //    }
-   //    $('#topic').append(list)
+
+
+     
 
 
 
