@@ -28,3 +28,9 @@
 p {
     font-weight: 700;
 }
+#myForcast{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
