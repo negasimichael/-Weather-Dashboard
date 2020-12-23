@@ -98,7 +98,6 @@ function currentWeather() {
                 console.log(myDate)
                 var myImg = data[i].weather[0].icon
                 console.log(myImg)
-                // if (data[i].dt_txt.indexOf("15:00:00") !== -1) {
                 // create div for weather forcast
                 var col = $("<div>").addClass("xyz col-md-3");
                 var card = $("<div>").addClass("card bg-primary text-white");
@@ -111,7 +110,6 @@ function currentWeather() {
                 var p2 = $("<p>").addClass("card-text").text("Humidity: " + data[i].main.humidity + "%");
                 //apend the tags to the title, img, p1 & p2 to body, boy to card, card to col and finally col to the forcast div
                 $("#myForcast").append(col.append(card.append(body.append(title,img, p1, p2))));
-                // }
             }
         })
     }

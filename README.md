@@ -4,6 +4,10 @@ Then I am presented with a 5-day forecast that displays the date, an icon repres
 Then I am again presented with current and future conditions for that city.When I open the weather dashboard.Then I am presented with the last searched city forecast.
 
 
-![Weather-Dashboard](screenshot.png)
+![Weather-Dashboard](screenshot1.png)
+
+![Weather-Dashboard](screenshot2.png)
+
+![Weather-Dashboard](screenshot2.png)
 
 URL https://negasimichael.github.io/-Weather-Dashboard/
