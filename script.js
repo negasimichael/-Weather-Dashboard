@@ -87,14 +87,14 @@ function currentWeather() {
             var data = result.list
             console.log(data)
 
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 40; i+=8) {
                 // var myDate =  new Date(data.list[0].dt_txt;
                 var humidity5 = data[0].main.humidity
                 console.log(humidity5)
                 // $("#myForcast").append(humidity5)
                 var temp2 = data[0].main.temp_max
                 console.log(temp2)
-                var myDate = new Date(data[i].dt_txt).toLocaleDateString();
+                var myDate = new Date(data[i].dt_txt)//.toLocaleDateString();
                 console.log(myDate)
                 var myImg = data[i].weather[0].icon
                 console.log(myImg)
@@ -105,11 +105,12 @@ function currentWeather() {
                 var body = $("<div>").addClass("card-body p-3");
                 //create tags todays date, image, temp and humidity
                 var title = $("<h2>").addClass("card-title").text(new Date(data[i].dt_txt).toLocaleDateString());
-                var img = $("<img>").attr("src", "https://openweathermap.org/img/w/02d.png");
+                var iconImg = (data[i].weather[0].icon)
+                var img = $("<img>").attr("src", "https://openweathermap.org/img/w/"+ iconImg + ".png")
                 var p1 = $("<p>").addClass("card-text").text("Temp: " + data[i].main.temp_max + " °F");
                 var p2 = $("<p>").addClass("card-text").text("Humidity: " + data[i].main.humidity + "%");
                 //apend the tags to the title, img, p1 & p2 to body, boy to card, card to col and finally col to the forcast div
-                $("#myForcast").append(col.append(card.append(body.append(title, p1, p2))));
+                $("#myForcast").append(col.append(card.append(body.append(title,img, p1, p2))));
                 // }
             }
         })
