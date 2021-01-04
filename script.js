@@ -7,7 +7,6 @@ function currentWeather() {
     $("#search-button").on("click", function (e) {
         e.preventDefault();
         var city = $('#search-value').val().trim();
-        // $('#search-value').val('');
         searchWeather(city);
         abcdForcast(city)
         console.log(city)
