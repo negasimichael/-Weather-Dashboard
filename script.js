@@ -7,15 +7,20 @@ function currentWeather() {
     $("#search-button").on("click", function (e) {
         e.preventDefault();
         var city = $('#search-value').val().trim();
+        $('#search-value').val('');
         searchWeather(city);
-        abcdForcast(city)
-        console.log(city)
+        abcdForcast(city);
+        console.log(city);
+    });
+
+    $(".history").on("click", "li", function () {
+        searchWeather($(this).text());
     });
 
     function makeList(name) {
         var li = $("<li>").addClass("list-group-item  list-group-item-action").text(name);
         li.attr('id', name);
-        $("histry").prepend(li);
+        $("history").prepend(li);
     }
     const apiKey = "e5920134e1d6747e542246af4b9e297f";
     function searchWeather(city) {
