@@ -13,9 +13,6 @@ function currentWeather() {
         console.log(city);
     });
 
-    $(".history").on("click", "li", function () {
-        searchWeather($(this).text());
-    });
 
     function makeList(name) {
         var li = $("<li>").addClass("list-group-item  list-group-item-action").text(name);
